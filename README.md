@@ -18,6 +18,7 @@ Included Libraries
 ------------------
 
 Libraries included in the project are currently only in their production versions:
+
 * [RequireJS 1.0.2](http://requirejs.org/) with [text plugin](http://requirejs.org/docs/download.html#text) for templates
 * [jQuery 1.7.1](http://jquery.com/)
 * [Underscore 1.2.2](http://documentcloud.github.com/underscore/)
