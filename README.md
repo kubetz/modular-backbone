@@ -1,7 +1,7 @@
 Modular Backbone Project Template
 =================================
 
-This project is heavily (and I mean heavily) inspired by the work of Thomas Davis and his
+This project is based on the work of Thomas Davis and his
 [Organizing your application using Modules (require.js)](http://backbonetutorials.com/organizing-backbone-using-modules/) tutorial.
 
 Aim of this project is to provide minimalistic structure of the Backbone project using RequireJS that is containing up-to-date libraries and
