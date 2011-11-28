@@ -1,6 +1,6 @@
 define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
 
-    var AppRouter = Backbone.Router.extend({
+    var Router = Backbone.Router.extend({
 
         routes: {
           '': ''
@@ -11,8 +11,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
     return {
 
         initialize: function() {
-            var app_router = new AppRouter();
-
+            new Router();
             Backbone.history.start();
         }
 
