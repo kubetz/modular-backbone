@@ -1,18 +1,14 @@
-Modular Backbone Project
-========================
+Modular Backbone Project Template
+=================================
 
 This project is heavily (and I mean heavily) inspired by the work of Thomas Davis and his
 [Organizing your application using Modules (require.js)](http://backbonetutorials.com/organizing-backbone-using-modules/) tutorial.
 
 Aim of this project is to provide minimalistic structure of the Backbone project using RequireJS that is containing up-to-date libraries and
-is immediately ready for the implementation. This version contains neither sample implementation nor stylesheets and other assets. Currently it ships
-with super-tiny node.js http server ([server.js](https://github.com/dzejkej/modular-backbone/blob/master/server.js)).
-
+is immediately ready for the implementation. This version contains neither sample implementation nor stylesheets and other assets.
 
 If you want to have a look at the slightly different version of this project containing simple example implementation
-have a look [here](https://github.com/dzejkej/backbonetutorials/tree/gh-pages/examples/modular-backbone-updated). There is a
-[pull request](https://github.com/thomasdavis/backbonetutorials/pull/25) to pull this project back to the
-[original repository](https://github.com/thomasdavis/backbonetutorials).
+have a look [here](https://github.com/dzejkej/backbonetutorials/tree/gh-pages/examples/modular-backbone-updated).
 
 Included Libraries
 ------------------
