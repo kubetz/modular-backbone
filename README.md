@@ -15,7 +15,7 @@ Included Libraries
 
 Libraries included in the project are currently only in their production (minified) versions.
 
-* [RequireJS 1.0.2](http://requirejs.org/) with [text plugin](http://requirejs.org/docs/download.html#text) for templates
+* [RequireJS 1.0.3](http://requirejs.org/) with [text plugin](http://requirejs.org/docs/download.html#text) for templates
 * [jQuery 1.7.1](http://jquery.com/)
 * [Underscore 1.2.3](http://documentcloud.github.com/underscore/)
 * [Backbone 0.5.3](http://documentcloud.github.com/backbone/) in a form of [optamd3 branch](https://github.com/jrburke/backbone/tree/optamd3) by James Burke
