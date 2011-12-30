@@ -1,14 +1,12 @@
 Modular Backbone Project Template
 =================================
 
-Project's goal is to provide a minimalistic structure of the Backbone project using RequireJS and up-to-date dependencies.
+Project's goal is to provide a minimalistic structure of the Backbone application using RequireJS and up-to-date dependencies.
 
 This project is based on the work of Thomas Davis and his
 [Organizing your application using Modules (require.js)](http://backbonetutorials.com/organizing-backbone-using-modules/) tutorial.
 
 ###Included Libraries###
-
-Libraries included in the project are currently only in their production (minified) versions.
 
 * [RequireJS 1.0.3](http://requirejs.org/) with [text plugin](http://requirejs.org/docs/download.html#text) for templates
 * [jQuery 1.7.1](http://jquery.com/)
@@ -17,7 +15,8 @@ Libraries included in the project are currently only in their production (minifi
 
 ###Using RequireJS Optimizer###
 
-Backbone Project Template contains a sample build file for [RequireJS Optimizer](http://requirejs.org/docs/optimization.html) located in [js/app.build.js](https://github.com/dzejkej/modular-backbone/blob/master/js/app.build.js). All configuration options are available [here](https://github.com/jrburke/r.js/blob/master/build/example.build.js).
+A sample build file for [RequireJS Optimizer](http://requirejs.org/docs/optimization.html) is included in 
+[js/app.build.js](https://github.com/dzejkej/modular-backbone/blob/master/js/app.build.js). All configuration options are available [here](https://github.com/jrburke/r.js/blob/master/build/example.build.js).
 
 ---
 
