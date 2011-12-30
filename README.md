@@ -20,5 +20,9 @@ Libraries included in the project are currently only in their production (minifi
 * [Underscore 1.2.3](http://documentcloud.github.com/underscore/)
 * [Backbone 0.5.3](http://documentcloud.github.com/backbone/) in a form of [optamd3 branch](https://github.com/jrburke/backbone/tree/optamd3) by James Burke
 
+Using RequireJS Optimizer
+-------------------------
 
-For all good people that cannot live without LICENSE [here it is](http://sam.zoy.org/wtfpl/COPYING) ☺.
+Backbone Project Template contains a sample build file for [RequireJS Optimizer](http://requirejs.org/docs/optimization.html) located in [js/app.build.js](https://github.com/dzejkej/modular-backbone/blob/master/js/app.build.js). All configuration options are available [here](https://github.com/jrburke/r.js/blob/master/build/example.build.js).
+
+For everyone that cannot live without LICENSE - [here it is](http://sam.zoy.org/wtfpl/COPYING) ☺.
