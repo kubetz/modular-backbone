@@ -10,12 +10,12 @@ This project is based on the work of Thomas Davis and his
 
 * [RequireJS 1.0.3](http://requirejs.org/) with [text plugin](http://requirejs.org/docs/download.html#text) for templates
 * [jQuery 1.7.1](http://jquery.com/)
-* [Underscore 1.2.3](http://documentcloud.github.com/underscore/)
+* [Underscore 1.2.4](http://documentcloud.github.com/underscore/)
 * [Backbone 0.5.3](http://documentcloud.github.com/backbone/) in a form of [optamd3 branch](https://github.com/jrburke/backbone/tree/optamd3) by James Burke
 
 ###Using RequireJS Optimizer###
 
-A sample build file for [RequireJS Optimizer](http://requirejs.org/docs/optimization.html) is included in 
+A sample build file for [RequireJS Optimizer](http://requirejs.org/docs/optimization.html) is included in
 [js/app.build.js](https://github.com/dzejkej/modular-backbone/blob/master/js/app.build.js). All configuration options are available [here](https://github.com/jrburke/r.js/blob/master/build/example.build.js).
 
 ---
