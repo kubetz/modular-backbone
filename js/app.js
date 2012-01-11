@@ -1,11 +1,14 @@
 define(['jquery', 'underscore', 'backbone', 'router'], function($, _, Backbone, Router) {
 
-    return {
-
-        initialize: function() {
-            Router.initialize();
-        }
-
+    // application namespace
+    window.App = window.App || {
+        router: new Router()
     };
-
+    
+    return {
+        initialize: function() {
+            Backbone.history.start();
+        }
+    };
+    
 });

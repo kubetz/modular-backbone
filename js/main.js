@@ -10,8 +10,6 @@ require.config({
 
 });
 
-require(['json2', 'jquery', 'underscore', 'backbone', 'app'], function(App) {
-
-    App.initialize();
-
+require(['app', 'json2'], function(app) {
+    app.initialize();
 });
