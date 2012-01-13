@@ -6,5 +6,5 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
         }
     });
 
-    return Router;
+    return new Router();
 });
