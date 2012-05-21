@@ -1,5 +1,5 @@
 /*
-    http://www.JSON.org/json2.js
+    json2.js
     2011-10-19
 
     Public Domain.
@@ -484,4 +484,4 @@ if (!JSON) {
             throw new SyntaxError('JSON.parse');
         };
     }
-}()); 
+}());
