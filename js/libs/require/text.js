@@ -1,5 +1,5 @@
 /**
- * @license RequireJS text 2.0.7 Copyright (c) 2010-2012, The Dojo Foundation All Rights Reserved.
+ * @license RequireJS text 2.0.12 Copyright (c) 2010-2014, The Dojo Foundation All Rights Reserved.
  * Available via the MIT or new BSD license.
  * see: http://github.com/requirejs/text for details
  */
@@ -11,7 +11,7 @@
 define(['module'], function (module) {
     'use strict';
 
-    var text, fs, Cc, Ci,
+    var text, fs, Cc, Ci, xpcIsWindows,
         progIds = ['Msxml2.XMLHTTP', 'Microsoft.XMLHTTP', 'Msxml2.XMLHTTP.4.0'],
         xmlRegExp = /^\s*<\?xml(\s)+version=[\'\"](\d)*.(\d)*[\'\"](\s)*\?>/im,
         bodyRegExp = /<body[^>]*>\s*([\s\S]+)\s*<\/body>/im,
@@ -23,7 +23,7 @@ define(['module'], function (module) {
         masterConfig = (module.config && module.config()) || {};
 
     text = {
-        version: '2.0.7',
+        version: '2.0.12',
 
         strip: function (content) {
             //Strips <?xml ...?> declarations so that external SVG and XML
@@ -162,12 +162,12 @@ define(['module'], function (module) {
 
             // Do not bother with the work if a build and text will
             // not be inlined.
-            if (config.isBuild && !config.inlineText) {
+            if (config && config.isBuild && !config.inlineText) {
                 onLoad();
                 return;
             }
 
-            masterConfig.isBuild = config.isBuild;
+            masterConfig.isBuild = config && config.isBuild;
 
             var parsed = text.parseName(name),
                 nonStripName = parsed.moduleName +
@@ -175,6 +175,12 @@ define(['module'], function (module) {
                 url = req.toUrl(nonStripName),
                 useXhr = (masterConfig.useXhr) ||
                          text.useXhr;
+
+            // Do not load if it is an empty: url
+            if (url.indexOf('empty:') === 0) {
+                onLoad();
+                return;
+            }
 
             //Load the text. Use XHR if possible and in a browser.
             if (!hasLocation || useXhr(url, defaultProtocol, defaultHostName, defaultPort)) {
@@ -237,7 +243,8 @@ define(['module'], function (module) {
     if (masterConfig.env === 'node' || (!masterConfig.env &&
             typeof process !== "undefined" &&
             process.versions &&
-            !!process.versions.node)) {
+            !!process.versions.node &&
+            !process.versions['node-webkit'])) {
         //Using special require.nodeRequire, something added by r.js.
         fs = require.nodeRequire('fs');
 
@@ -250,7 +257,9 @@ define(['module'], function (module) {
                 }
                 callback(file);
             } catch (e) {
-                errback(e);
+                if (errback) {
+                    errback(e);
+                }
             }
         };
     } else if (masterConfig.env === 'xhr' || (!masterConfig.env &&
@@ -278,12 +287,14 @@ define(['module'], function (module) {
                 //Do not explicitly handle errors, those should be
                 //visible via console output in the browser.
                 if (xhr.readyState === 4) {
-                    status = xhr.status;
+                    status = xhr.status || 0;
                     if (status > 399 && status < 600) {
                         //An http 4xx or 5xx error. Signal an error.
                         err = new Error(url + ' HTTP status: ' + status);
                         err.xhr = xhr;
-                        errback(err);
+                        if (errback) {
+                            errback(err);
+                        }
                     } else {
                         callback(xhr.responseText);
                     }
@@ -340,14 +351,20 @@ define(['module'], function (module) {
             typeof Components !== 'undefined' && Components.classes &&
             Components.interfaces)) {
         //Avert your gaze!
-        Cc = Components.classes,
+        Cc = Components.classes;
         Ci = Components.interfaces;
         Components.utils['import']('resource://gre/modules/FileUtils.jsm');
+        xpcIsWindows = ('@mozilla.org/windows-registry-key;1' in Cc);
 
         text.get = function (url, callback) {
-            var inStream, convertStream,
-                readData = {},
-                fileObj = new FileUtils.File(url);
+            var inStream, convertStream, fileObj,
+                readData = {};
+
+            if (xpcIsWindows) {
+                url = url.replace(/\//g, '\\');
+            }
+
+            fileObj = new FileUtils.File(url);
 
             //XPCOM, you so crazy
             try {

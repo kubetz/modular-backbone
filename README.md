@@ -8,10 +8,10 @@ This project is based on the work of Thomas Davis and his
 
 ###Included Libraries
 
-* [RequireJS 2.1.6](http://requirejs.org/) with [text plugin](http://requirejs.org/docs/download.html#text) for templates
-* [jQuery 2.0.3](http://jquery.com/)
-* [Underscore 1.4.4](http://documentcloud.github.com/underscore/) in the form of [amdjs branch](https://github.com/amdjs/underscore)
-* [Backbone 1.0.0](http://documentcloud.github.com/backbone/) in the form of [amdjs branch](https://github.com/amdjs/backbone)
+* [RequireJS 2.1.14](http://requirejs.org/) with [text plugin](http://requirejs.org/docs/download.html#text) for templates
+* [jQuery 2.1.1](http://jquery.com/)
+* [Underscore 1.6.0](http://documentcloud.github.com/underscore/) in the form of [amdjs branch](https://github.com/amdjs/underscore)
+* [Backbone 1.1.2](http://documentcloud.github.com/backbone/) in the form of [amdjs branch](https://github.com/amdjs/backbone)
 * [json2.js](https://github.com/douglascrockford/JSON-js)
 
 ###Using RequireJS Optimizer
