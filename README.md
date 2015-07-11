@@ -1,5 +1,10 @@
+
 Modular Backbone Project Template
 =================================
+
+***
+**Update**: This project is no longer being maintained.
+***
 
 Project's goal is to provide a minimalistic structure of the Backbone application using RequireJS and up-to-date dependencies.
 
